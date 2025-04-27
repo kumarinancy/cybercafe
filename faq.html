@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - DK Digital Hub</title>
+    <link rel="stylesheet" href="bootstrap/bootstrap-5.3.3-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="icons1/fontawesome-free-6.7.2-web/fontawesome-free-6.7.2-web/css/all.css">
+</head>
+<body class="bg-warning">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="fas fa-laptop-house"></i> DK Digital Hub</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link text-light" href="index.html"><i class="fas fa-home"></i>Home</a></li>
+                    <li class="nav-item"><a class="nav-link text-light" href="index.html"><i class="fas fa-info-circle"></i>About</a></li>
+                    <li class="nav-item"><a class="nav-link text-light" href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+                    <li class="nav-item active"><a class="nav-link text-light" href="services.html"><i class="fas fa-concierge-bell"></i>Services</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+  <!-- Breadcrumb -->
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none text-dark">Home</a></li>
+    <li class="breadcrumb-item active">FAQ</li>
+</ol>
+
+    <!-- FAQ Header Section -->
+    <div class="container my-5">
+        <div class="bg-dark p-5 rounded text-center">
+            <h1 class="text-warning fw-bold"><i class="fas fa-question-circle"></i> Frequently Asked Questions</h1>
+            <p class="text-light">Find answers to your queries. Use the search bar to filter questions.</p>
+            
+            <!-- Search Bar -->
+            <div class="input-group mt-3">
+                <input type="text" class="form-control border-primary" id="searchInput" onkeyup="filterFAQ()" placeholder="Search for a question...">
+                <span class="input-group-text bg-warning text-white"><i class="fas fa-search"></i></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- FAQ Accordion -->
+    <div class="container">
+        <div class="accordion bg-dark" id="faqAccordion">
+            <!-- FAQ 1 -->
+            <div class="accordion-item faq-item">
+                <h2 class="accordion-header" id="faq1">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1">
+                        🍽️ What services do you offer?
+                    </button>
+                </h2>
+                <div id="collapse1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        We offer photocopying, document laminating, application filling, and printing services.
+                    </div>
+                </div>
+            </div>
+            
+            <!-- FAQ 2 -->
+            <div class="accordion-item faq-item">
+                <h2 class="accordion-header" id="faq2">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2">
+                        📞 How can I contact you?
+                    </button>
+                </h2>
+                <div id="collapse2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        You can reach us by phone at +91 7979018175, email at dk167212@gmail.com, or visit our cyber café: DK Digital Hub, Dehri, Bihar, India.
+                    </div>
+                </div>
+            </div>
+        
+            <!-- FAQ 3 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="faq3">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3">
+                        🚚 Do you offer home delivery services?
+                    </button>
+                </h2>
+                <div id="collapse3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Currently, we do not offer home delivery. You can collect your items from our café.
+                    </div>
+                </div>
+            </div>
+        
+            <!-- FAQ 4 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="faq4">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4">
+                        💰 How can I make a payment?
+                    </button>
+                </h2>
+                <div id="collapse4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        We accept cash, debit/credit cards, and UPI. For online payments, please contact us for further instructions.
+                    </div>
+                </div>
+            </div>
+        
+            <!-- FAQ 5 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="faq5">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5">
+                        📄 What is the price for application filling?
+                    </button>
+                </h2>
+                <div id="collapse5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        The cost depends on the type of application. Please contact us for more details.
+                    </div>
+                </div>
+            </div>
+        
+            <!-- FAQ 6 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="faq6">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6">
+                        🖨️ What is the price for black and white printing?
+                    </button>
+                </h2>
+                <div id="collapse6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Black and white printing costs ₹5 per page. For bulk orders, discounts may apply.
+                    </div>
+                </div>
+            </div>
+        
+            <!-- FAQ 7 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="faq7">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7">
+                        🎨 What is the price for color printing?
+                    </button>
+                </h2>
+                <div id="collapse7" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Color printing costs ₹20 per page. We offer discounts on larger print orders.
+                    </div>
+                </div>
+            </div>
+        
+            <!-- FAQ 8 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="faq8">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8">
+                        🏷️ How much does lamination cost?
+                    </button>
+                </h2>
+                <div id="collapse8" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Lamination costs ₹15 per page. Prices may vary depending on the paper size.
+                    </div>
+                </div>
+            </div>
+        
+            <!-- FAQ 9 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="faq9">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9">
+                        📱 Do you provide mobile accessories?
+                    </button>
+                </h2>
+                <div id="collapse9" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Yes, we offer a variety of mobile accessories like phone cases, chargers, earphones, etc.
+                    </div>
+                </div>
+            </div>
+        
+            <!-- FAQ 10 -->
+            <div class="accordion-item faq-item">
+                <h2 class="accordion-header" id="faq10">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10">
+                        ⏰ What are your working hours?
+                    </button>
+                </h2>
+                <div id="collapse10" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        We are open from 10 AM to 6 PM, Monday to Saturday. We are closed on Sundays.
+                    </div>
+                </div>
+            </div>
+        
+            <!-- FAQ 11 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="faq11">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse11">
+                        🎓 Do you offer student discounts?
+                    </button>
+                </h2>
+                <div id="collapse11" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Yes, we offer a 10% discount to students on all services with a valid student ID.
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-4 mt-5 text-center">
+        <p class="mb-0">© 2025 DK Digital Hub | All Rights Reserved</p>
+    </footer>
+
+    <!-- Bootstrap & JavaScript -->
+    <script src="bootstrap/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function filterFAQ() {
+            var input = document.getElementById('searchInput');
+            var filter = input.value.toLowerCase();
+            var faqItems = document.querySelectorAll('.accordion-item');
+        
+            faqItems.forEach(function(item) {
+                var buttonText = item.querySelector('.accordion-button').textContent.toLowerCase();
+                var bodyText = item.querySelector('.accordion-body').textContent.toLowerCase();
+        
+                if (buttonText.includes(filter) || bodyText.includes(filter)) {
+                    item.style.display = "";
+                } else {
+                    item.style.display = "none";
+                }
+            });
+        }
+        </script>
+        
+
+</body>
+</html>

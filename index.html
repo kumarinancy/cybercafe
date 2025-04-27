@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DK Digital Hub</title>
+    <link rel="stylesheet" href="bootstrap/bootstrap-5.3.3-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="icons1/fontawesome-free-6.7.2-web/fontawesome-free-6.7.2-web/css/all.css">
+</head>
+<body class="container-fluid" style="background-image: url('62185.jpg');">
+
+    <!-- Navigation bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+      <!-- Brand name -->
+      <a class="navbar-brand fw-bold" href="#" data-bs-toggle="tooltip" title="Home Page">
+          <i class="fas fa-laptop-house"></i> DK Digital Hub
+      </a>
+
+      <!-- Mobile toggle button -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Navbar items -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+
+              <!-- Home -->
+              <li class="nav-item">
+                  <a class="nav-link active text-white" href="#" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Go to Home">
+                      <i class="fas fa-home"></i> Home
+                  </a>
+              </li>
+
+              <!-- About -->
+              <li class="nav-item">
+                  <a class="nav-link text-white" href="#about-us" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Learn about us">
+                      <i class="fas fa-info-circle"></i> About
+                  </a>
+              </li>
+
+              <!-- Services -->
+              <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle text-white" href="#" id="servicesDropdown" data-bs-toggle="dropdown" aria-expanded="false" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Explore our services">
+                      <i class="fas fa-concierge-bell"></i> Services
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+                      <li><a class="dropdown-item" href="#" data-bs-toggle="tooltip" data-bs-placement="right" title="Print your documents">
+                          <i class="fas fa-print"></i> Printing
+                      </a></li>
+                      <li><a class="dropdown-item" href="#" data-bs-toggle="tooltip" data-bs-placement="right" title="Get documents laminated">
+                          <i class="fas fa-clone"></i> Lamination
+                      </a></li>
+                      <li><a class="dropdown-item" href="#" data-bs-toggle="tooltip"data-bs-placement="right" title="Fill online applications">
+                          <i class="fas fa-file-alt"></i> Application Filling
+                      </a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="services.html" data-bs-toggle="tooltip" data-bs-placement="right" title="See more services">
+                          More...
+                      </a></li>
+                  </ul>
+              </li>
+
+              <!-- Contact -->
+              <li class="nav-item">
+                  <a class="nav-link text-white" href="contact.html" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Contact us">
+                      <i class="fas fa-envelope"></i> Contact
+                  </a>
+              </li>
+
+              <!-- Notification bell -->
+              <li class="nav-item">
+                  <a class="nav-link position-relative text-white" href="#" id="notificationIcon" data-bs-toggle="tooltip" data-bs-placement="bottom" title="View notifications">
+                      <i class="fas fa-bell"></i>
+                      <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning" id="notificationCount">&nbsp;</span>
+                  </a>
+              </li>
+
+              <!-- Search bar -->
+              <form class="d-flex ms-3">
+                  <input class="me-2 rounded-pill" type="text" id="searchInput" placeholder="Search services..." aria-label="Search" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Search for services">
+                  <button class="btn btn-warning" type="button" id="searchBtn" data-bs-toggle="tooltip" title="Search services"><i class="fas fa-search"></i></button>
+              </form>
+
+              <!-- Sign in button -->
+              <ul class="navbar-nav ms-auto">
+                  <li class="nav-item">
+                      <button class="btn btn-outline-light rounded-pill ms-2" data-bs-toggle="modal" data-bs-target="#signInModal" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Sign in to your account">
+                          <i class="fa-solid fa-user"></i> Sign In
+                      </button>
+                  </li>
+              </ul>
+
+          </ul>
+      </div>
+  </div>
+</nav>
+
+    
+    <!-- Hero Section -->
+<section id="hero-section" style="background-image: url(images.jpg); background-repeat: no-repeat; background-size: cover;">
+  <br><br>
+  <div class="container text-center text-white fw-bold">
+      <h1>Welcome to <span class="brand-name">DK Digital Hub</span></h1>
+      <h2>Your One-Stop Cyber Solution</h2>
+      <p>Printing | Scanning | Online Forms | Document Services</p>
+
+      <!-- Updated Button -->
+      <button id="exploreBtn" class="btn btn-warning">Explore Our Services</button>
+      <br><br><br>
+  </div>
+
+<!-- Spinner Overlay (Initially Hidden) -->
+<div id="spinnerOverlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
+    background-color: rgba(0, 0, 0, 0.8); z-index: 9999; justify-content: center; align-items: center; color: white;">
+    <div style="text-align: center;">
+        <div class="spinner-border text-warning" style="width: 4rem; height: 4rem;" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+        <p class="mt-3">Exploring Our Services...</p>
+    </div>
+</div>
+
+    </section>
+
+    
+    
+   <!--About us section-->
+<section id="about-us" class="bg-light py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <!--Left side-->
+            <div class="col-md-6">
+                <img src="refat-ul-islam-GAIfcyT6cxs-unsplash.jpg" alt="About Us" class="img-fluid rounded w-100" style="height: 600px;">
+            </div>
+
+            <!--Right side-->
+            <div class="col-md-6">
+                <h2 class="fw-bold mb-3">About Us</h2>
+                <p class="lead">Welcome to DK Digital Hub! We are a leading provider of digital services, offering everything from printing to application filling. Our goal is to empower businesses and individuals with the best digital solutions that meet their unique needs.</p>
+
+                <h4 class="mt-4">Our Vision</h4>
+                <p>To be the most trusted digital services hub, providing innovative solutions to help individuals and businesses thrive in the digital world.</p>
+
+                <h4>Our Mission</h4>
+                <p>We strive to deliver high-quality services with a focus on customer satisfaction, reliability, and innovation. We aim to bring ease and convenience to your digital needs.</p>
+
+                <h4>Our Core Values</h4>
+                <ul>
+                    <li><span class="fw-bold"> Centricity:</span> Our customers are at the heart of everything we do.</li>
+                    <li><span class="fw-bold">Integrity:</span> We believe in transparent and honest business practices.</li>
+                    <li><span class="fw-bold">Innovation:</span>We continuously strive to offer the latest and most efficient solutions.</li>
+                    <li><span class="fw-bold">Quality:</span> We maintain the highest standards in all our services.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="container my-5">
+    <h2 class="text-center mb-4">What Our Customers Say</h2>
+    <div class="row g-4 justify-content-center">
+  
+      <!-- Testimonial 1 -->
+      <div class="col-md-4">
+        <div class="card h-100 text-center border-0 shadow">
+          <img src="ankit.jpg" class="rounded-circle mx-auto mt-4" style="width:100px; height:100px;" alt="Customer Photo">
+          <div class="card-body">
+            <h5 class="card-title mb-1">Ankit Kumar</h5>
+            <p class="mb-2">
+              <span class="text-warning">★ ★ ★ ★ ★</span>
+            </p>
+            <p class="card-text">Fast and reliable service! I got my documents printed and laminated within minutes. Staff is very cooperative.</p>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Testimonial 2 -->
+      <div class="col-md-4">
+        <div class="card h-100 text-center border-0 shadow">
+          <img src="neeraj.jpg" class="rounded-circle mx-auto mt-4" style="width:100px; height:100px;" alt="Customer Photo">
+          <div class="card-body">
+            <h5 class="card-title mb-1">Neeraj Kumar</h5>
+            <p class="mb-2">
+              <span class="text-warning">★ ★ ★ ★</span><span class="text-muted">★</span>
+            </p>
+            <p class="card-text">Great printing quality and affordable rates. I often come here for color xerox and document printing. Highly recommended!</p>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Testimonial 3 -->
+      <div class="col-md-4">
+        <div class="card h-100 text-center border-0 shadow">
+          <img src="WhatsApp Image 2025-04-06 at 15.17.13_b3aea954.jpg" class="rounded-circle mx-auto mt-4" style="width:100px; height:100px;" alt="Customer Photo">
+          <div class="card-body">
+            <h5 class="card-title mb-1">Sumesh Kumar Sharma</h5>
+            <p class="mb-2">
+              <span class="text-warning">★ ★ ★ ★ ★</span>
+            </p>
+            <p class="card-text">I got my passport-sized photos printed here — excellent quality and quick service. Will definitely visit again!</p>
+          </div>
+        </div>
+      </div>
+  
+
+      <!---pagination-->
+
+  <nav aria-label="Page navigation">
+    <ul class="pagination justify-content-center">
+      <li class="page-item active">
+        <a class="page-link" href="index.html">1</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="services.html">2</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="print1.html">3</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="banner.html">4</a>
+      </li>
+    </ul>
+  </nav>
+  
+    </div>
+  </div>
+  
+ 
+<footer class="bg-dark text-light py-4">
+    <div class="container text-center">
+        <div class="row">
+            <!--About section-->
+            <div class="col-md-4">
+                <h5>About Us</h5>
+                <p>DK Digital Hub provides top-notch digital services including printing, lamination, and application filling.</p>
+            </div>
+
+            <!--Quick links-->
+            <div class="col-md-4">
+                <h5>Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#home" class="text-light text-decoration-none"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="#about-us" class="text-light text-decoration-none"><i class="fas fa-info-circle"></i> About</a></li>
+                    <li><a href="services.html" class="text-light text-decoration-none"><i class="fas fa-concierge-bell"></i> Services</a></li>
+                    <li><a href="#" class="text-light text-decoration-none"><i class="fas fa-envelope"></i> Contact</a></li>
+                    <li><a href="faq.html" class="text-light text-decoration-none"><i class="fas fa-question-circle"></i> FAQs</a></li>
+                </ul>
+            </div>
+
+            <!--Contact-->
+            <div class="col-md-4">
+                <h5>Contact Us</h5>
+                <p><i class="fas fa-phone"></i> +91 7979018175</p>
+                <p><i class="fas fa-envelope"></i> dk167212@gmail.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> DK Digital HUb, Dehri, Bihar, India</p>
+
+                <!--Social icons-->
+                <div>
+                    <a href="#" class="text-light me-2"><i class="fab fa-facebook fa-lg"></i></a>
+                    <a href="#" class="text-light me-2"><i class="fab fa-instagram fa-lg"></i></a>
+                    <a href="#" class="text-light me-2"><i class="fab fa-twitter fa-lg"></i></a>
+                    <a href="#" class="text-light"><i class="fab fa-linkedin fa-lg"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <hr class="bg-light">
+
+        <p class="mb-0">© 2025 DK Digital Hub | All Rights Reserved</p>
+    </div>
+</footer>
+
+<!-- Sign In Modal -->
+<div class="modal fade" id="signInModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content rounded-4 shadow-lg">
+        <div class="modal-header bg-primary text-white">
+          <h5 class="modal-title">Welcome Back!</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body bg-light text-dark">
+          <form>
+            <div class="mb-3">
+              <label class="form-label">Email</label>
+              <input type="email" class="form-control" placeholder="Enter your email" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Password</label>
+              <input type="password" class="form-control" placeholder="Enter your password" required>
+            </div>
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="rememberMe">
+              <label class="form-check-label" for="rememberMe">Remember Me</label>
+            </div>
+            <button type="submit" class="btn btn-primary w-100 rounded-pill">Login</button>
+          </form>
+          <p class="mt-3 text-center">New user? 
+            <a href="#" data-bs-toggle="modal" data-bs-target="#signUpModal" data-bs-dismiss="modal">Sign Up</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Sign Up Modal -->
+  <div class="modal fade" id="signUpModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content rounded-4 shadow-lg">
+        <div class="modal-header bg-success text-white">
+          <h5 class="modal-title">Create Your Account</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body bg-light text-dark">
+          <form>
+            <div class="mb-3">
+              <label class="form-label">Full Name</label>
+              <input type="text" class="form-control" placeholder="Enter your full name" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Email</label>
+              <input type="email" class="form-control" placeholder="Enter your email" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Password</label>
+              <input type="password" class="form-control" placeholder="Create a password" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Confirm Password</label>
+              <input type="password" class="form-control" placeholder="Confirm your password" required>
+            </div>
+            <button type="submit" class="btn btn-success w-100 rounded-pill">Sign Up</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  
+  
+
+<!--Bootstrap JS-->
+<script src="bootstrap/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.11.1/typeahead.bundle.min.js"></script>
+
+ <script>
+  // List of services and their corresponding URLs
+  var services = {
+    'printing': 'printing.html',
+    'lamination': 'lamination.html',
+    'application filling': 'form.html',
+    'banner': 'banner.html',
+    'poster': 'poster.html',
+    'photograph': 'photograph.html',
+    'resume': 'resume.html'
+  };
+
+  // Initialize Typeahead
+  var serviceNames = Object.keys(services); // Array of service names
+
+  $('#searchInput').typeahead({
+    hint: true,
+    highlight: true,
+    minLength: 1
+  },
+  {
+    name: 'services',
+    source: function(query, syncResults) {
+      // Filter service names based on the query
+      var matches = serviceNames.filter(function(service) {
+        return service.toLowerCase().includes(query.toLowerCase());
+      });
+      syncResults(matches);
+    }
+  });
+
+  // When a suggestion is selected, redirect to the corresponding page
+  $('#searchInput').bind('typeahead:select', function(ev, suggestion) {
+    window.location.href = services[suggestion];  // Redirect to the selected service's page
+  });
+
+  // When the search button is clicked, check the input and navigate
+  $('#searchBtn').click(function() {
+    var query = $('#searchInput').val().toLowerCase().trim();
+
+    // Check if the entered query matches a service name
+    if (services[query]) {
+      window.location.href = services[query];  // Redirect to the service page
+    } else {
+      alert('No matching service found. Please try again.');
+    }
+  });
+
+
+  // Spinner for Explore Button
+  const btn = document.getElementById("exploreBtn");
+  const spinner = document.getElementById("spinnerOverlay");
+  btn.addEventListener("click", function () {
+    spinner.style.display = "flex";
+    setTimeout(() => {
+      window.location.href = "services.html";
+    }, 2000);
+  });
+
+  // Initialize Bootstrap tooltips
+var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+  return new bootstrap.Tooltip(tooltipTriggerEl);
+});
+
+  
+  </script>
+  
+  
+  
+</body>
+</html>

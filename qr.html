@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>QR Code Printing</title>
+  <link rel="stylesheet" href="bootstrap/bootstrap-5.3.3-dist/css/bootstrap.css">
+  <link rel="stylesheet" href="icons1/fontawesome-free-6.7.2-web/fontawesome-free-6.7.2-web/css/all.css">
+  <style>
+    #qrCarousel img {
+      height: 50vh;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body style="background-image: url('62185.jpg');">
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#"><i class="fas fa-qrcode"></i> DK Digital Hub</a>
+    </div>
+  </nav>
+
+  <!-- Carousel -->
+  <div id="qrCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="binary-code-2709630_1280.jpg" class="d-block w-100" alt="QR Code Printing">
+      </div>
+      <div class="carousel-item">
+        <img src="bar-code-6128518_1280.png" class="d-block w-100" alt="QR Code Promotion">
+      </div>
+      <div class="carousel-item">
+        <img src="hands-1167612_1280.jpg" class="d-block w-100" alt="QR Payment">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#qrCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#qrCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+
+  <!-- Service Section -->
+  <section class="container my-5">
+    <h2 class="text-center mb-4 fw-bold text-primary">QR Code Print Options</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card text-white bg-primary shadow rounded-4 h-100" 
+             data-bs-toggle="popover" 
+             data-bs-title="Small QR Code" 
+             data-bs-content="Perfect for wallet cards, packaging or receipts. ₹15 each.">
+          <div class="card-body text-center">
+            <h4 class="card-title">Small Size</h4>
+            <p>For compact display. ₹15 each.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card text-white bg-success shadow rounded-4 h-100" 
+             data-bs-toggle="popover" 
+             data-bs-title="Medium QR Code" 
+             data-bs-content="Ideal for shop counters or flyers. ₹25 each. Clear and scannable.">
+          <div class="card-body text-center">
+            <h4 class="card-title">Medium Size</h4>
+            <p>For shops/flyers. ₹25 each.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card text-white bg-danger shadow rounded-4 h-100" 
+             data-bs-toggle="popover" 
+             data-bs-title="Large QR Code" 
+             data-bs-content="Perfect for banners or large displays. ₹40 each. High visibility and scan range.">
+          <div class="card-body text-center">
+            <h4 class="card-title">Large Size</h4>
+            <p>For banners/signs. ₹40 each.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Order Form -->
+  <section class="container my-5">
+    <h2 class="text-center mb-4 fw-bold text-success">Place Your Order</h2>
+    <div id="formAlert" class="alert alert-success d-none text-center" role="alert">
+      Your order has been submitted!
+    </div>
+    <div class="card shadow-lg rounded-4 p-4">
+      <form id="qrForm">
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label for="qrType" class="form-label fw-semibold">QR Code Size</label>
+            <input list="qrOptions" id="qrType" class="form-control" placeholder="Type or select..." required>
+            <datalist id="qrOptions">
+              <option value="Small - ₹15">
+              <option value="Medium - ₹25">
+              <option value="Large - ₹40">
+            </datalist>
+          </div>
+          <div class="col-md-6">
+            <label for="qty" class="form-label fw-semibold">Quantity</label>
+            <input type="number" id="qty" class="form-control" min="1" placeholder="e.g., 10" required>
+          </div>
+        </div>
+        <div class="mt-4 row">
+          <div class="col-md-4">
+            <div class="bg-light p-3 rounded border"><strong>Total:</strong> ₹<span id="totalPrice">0</span></div>
+          </div>
+          <div class="col-md-4">
+            <div class="bg-light p-3 rounded border"><strong>Discount:</strong> ₹<span id="discountAmount">0</span></div>
+          </div>
+          <div class="col-md-4">
+            <div class="bg-light p-3 rounded border"><strong class="text-success">Final:</strong> ₹<span id="finalPrice">0</span></div>
+          </div>
+        </div>
+        <div class="mt-4">
+          <label for="qrUpload" class="form-label fw-semibold" data-bs-toggle="popover" title="QR Code Upload" data-bs-content="Upload your QR code image (PNG/JPG).">Upload Your QR Code</label>
+          <input type="file" id="qrUpload" class="form-control" accept="image/*">
+          <div class="text-center mt-3">
+            <p class="fw-semibold">Preview:</p>
+            <img id="preview" class="img-fluid rounded border p-2 d-none" width="200" />
+          </div>
+        </div>
+        <div class="d-grid mt-4">
+          <button type="submit" id="checkout" class="btn btn-success btn-lg" data-bs-toggle="tooltip" title="Click to confirm and proceed">Proceed to Checkout</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Payment Modal -->
+  <div id="paymentModal" class="modal fade" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header bg-success text-white">
+          <h5 class="modal-title">Complete Your Payment</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body text-center">
+          <p class="fw-bold">Scan the QR code to pay via UPI:</p>
+          <img src="myqr.jpg" class="img-fluid border rounded" style="max-width: 200px;">
+          <p class="mt-3">Or use UPI ID:</p>
+          <div class="input-group mb-3">
+            <input type="text" class="form-control text-center" id="upiID" value="6209667646@ybl" readonly>
+            <button class="btn btn-outline-primary" onclick="copyUPIID()">Copy</button>
+          </div>
+          <hr>
+          <p class="fw-bold">Prefer Cash Payment?</p>
+          <button class="btn btn-success w-100" data-bs-dismiss="modal">Pay with Cash on Delivery</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!---pagination-->
+<nav aria-label="Page navigation">
+  <ul class="pagination justify-content-center">
+    <li class="page-item">
+      <a class="page-link" href="index.html">1</a>
+    </li>
+    <li class="page-item " aria-current="page">
+      <a class="page-link" href="services.html">2</a>
+    </li>
+    <li class="page-item">
+      <a class="page-link" href="print1.html">3</a>
+    </li>
+    <li class="page-item active">
+      <a class="page-link" href="qr.html">4</a>
+    </li>
+  </ul>
+</nav>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-light text-center py-3">
+      <p>&copy; 2025 DK Digital Hub | All Rights Reserved</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="bootstrap/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Price Calculation
+    document.getElementById("qty").addEventListener("input", updatePrice);
+    document.getElementById("qrType").addEventListener("input", updatePrice);
+    function updatePrice() {
+      let qty = parseInt(document.getElementById("qty").value) || 0;
+      let type = document.getElementById("qrType").value;
+      let rate = type.includes("Small") ? 15 : type.includes("Medium") ? 25 : type.includes("Large") ? 40 : 0;
+      let total = qty * rate;
+      let discount = total >= 300 ? total * 0.1 : 0;
+      let final = total - discount;
+      document.getElementById("totalPrice").innerText = total;
+      document.getElementById("discountAmount").innerText = discount.toFixed(2);
+      document.getElementById("finalPrice").innerText = final.toFixed(2);
+    }
+
+    // Image Preview
+    document.getElementById("qrUpload").addEventListener("change", function(e) {
+      let reader = new FileReader();
+      reader.onload = function(e) {
+        const img = document.getElementById("preview");
+        img.src = e.target.result;
+        img.classList.remove("d-none");
+      }
+      reader.readAsDataURL(e.target.files[0]);
+    });
+
+    // Form Submit
+    document.getElementById("qrForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      new bootstrap.Modal(document.getElementById("paymentModal")).show();
+      document.getElementById("formAlert").classList.remove("d-none");
+    });
+
+    // Tooltip & Popover Init
+    document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(el => new bootstrap.Tooltip(el));
+    document.querySelectorAll('[data-bs-toggle="popover"]').forEach(el => new bootstrap.Popover(el));
+
+    function copyUPIID() {
+      let upiInput = document.getElementById("upiID");
+      upiInput.select();
+      document.execCommand("copy");
+      alert("UPI ID copied: " + upiInput.value);
+    }
+  </script>
+</body>
+</html>

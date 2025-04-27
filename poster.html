@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Poster Printing</title>
+    <link rel="stylesheet" href="bootstrap/bootstrap-5.3.3-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="icons1/fontawesome-free-6.7.2-web/fontawesome-free-6.7.2-web/css/all.css">
+</head>
+<body style="background-image: url('62185.jpg');">
+   <!-- Navbar -->
+   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="#"><i class="fas fa-laptop-house"></i> DK Digital Hub</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link text-light" href="index.html"><i class="fas fa-home"></i>Home</a></li>
+                <li class="nav-item"><a class="nav-link text-light" href="index.html"><i class="fas fa-info-circle"></i>About</a></li>
+                <li class="nav-item"><a class="nav-link text-light" href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+                <li class="nav-item active"><a class="nav-link text-light" href="services.html"><i class="fas fa-concierge-bell"></i>Services</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+    <header class="text-white text-center" style="background: url('3540662.jpg') no-repeat center center/cover; height: 50vh;">
+        <div class="container d-flex flex-column align-items-center justify-content-center h-100">
+            <h1 class="fw-bold bg-dark p-3 rounded text-uppercase">High-Quality Poster Printing</h1>
+            <p class="lead bg-dark px-3 py-2 rounded mt-3">Professional prints delivered with perfection</p>
+        </div>
+    </header>
+    
+
+    <section class="container my-5" id="services">
+        <h2 class="text-center mb-4 fw-bold text-primary">Choose Your Poster Type</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card text-white bg-primary h-100 shadow rounded-4">
+                    <div class="card-body text-center">
+                        <h4 class="card-title">Glossy Poster</h4>
+                        <p class="card-text">Bright and shiny posters ideal for vibrant designs.</p>
+                        <p class="fw-bold">Price: ₹50 per sq. ft.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-white bg-success h-100 shadow rounded-4">
+                    <div class="card-body text-center">
+                        <h4 class="card-title">Matte Poster</h4>
+                        <p class="card-text">Smooth and elegant posters with a non-glare finish.</p>
+                        <p class="fw-bold">Price: ₹60 per sq. ft.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-white bg-danger h-100 shadow rounded-4">
+                    <div class="card-body text-center">
+                        <h4 class="card-title">Canvas Poster</h4>
+                        <p class="card-text">Premium posters printed on canvas for artistic look.</p>
+                        <p class="fw-bold">Price: ₹90 per sq. ft.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container my-5">
+        <h2 class="text-center mb-4 fw-bold text-success">Place Your Order</h2>
+        <div class="card shadow-lg rounded-4 p-4">
+            <form>
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label for="posterType" class="form-label fw-semibold">Select Poster Type</label>
+                        <select id="posterType" class="form-select">
+                            <option value="50">Glossy Poster - ₹50/sq. ft.</option>
+                            <option value="60">Matte Poster - ₹60/sq. ft.</option>
+                            <option value="90">Canvas Poster - ₹90/sq. ft.</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="size" class="form-label fw-semibold">Enter Size (sq. ft.)</label>
+                        <input type="number" id="size" class="form-control" min="1" placeholder="e.g., 20">
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-md-4">
+                        <div class="border p-3 rounded bg-light">
+                            <p class="mb-0 fw-bold">Total Price: ₹<span id="totalPrice">0</span></p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="border p-3 rounded bg-light">
+                            <p class="mb-0 fw-bold">Discount: ₹<span id="discountAmount">0</span></p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="border p-3 rounded bg-light">
+                            <p class="mb-0 fw-bold text-success">Final Price: ₹<span id="finalPrice">0</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-4">
+                    <label for="fileUpload" class="form-label fw-semibold">Upload Your Design</label>
+                    <input type="file" id="fileUpload" class="form-control" accept="image/*">
+                    <div class="mt-3 text-center">
+                        <p class="fw-semibold">Preview:</p>
+                        <img id="previewImage" src="" alt="Poster Preview" class="img-fluid border p-2 d-none rounded" width="200">
+                    </div>
+                </div>
+                <div class="d-grid mt-4">
+                    <a href="#" id="checkoutBtn" class="btn btn-lg btn-success">Proceed to Checkout</a>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <div id="paymentModal" class="modal fade" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-success text-white">
+                    <h5 class="modal-title">Complete Your Payment</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <p class="fw-bold">Scan the QR code to pay via UPI:</p>
+                    <img src="myqr.jpg" alt="UPI QR Code" class="img-fluid border rounded" style="max-width: 200px;">
+                    <p class="mt-3">Or use UPI ID:</p>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control text-center" id="upiID" value="6209667646@ybl" readonly>
+                        <button class="btn btn-outline-primary" onclick="copyUPIID()">Copy</button>
+                    </div>
+                    <hr>
+                    <p class="fw-bold">Prefer Cash Payment?</p>
+                    <button class="btn btn-success w-100" data-bs-dismiss="modal">Pay with Cash on Delivery</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+        <p>&copy; 2024 PrintHub. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById("size").addEventListener("input", function() {
+            let rate = document.getElementById("posterType").value;
+            let size = document.getElementById("size").value;
+            let total = rate * size;
+            let discount = total >= 1000 ? total * 0.1 : 0;
+            let finalPrice = total - discount;
+            document.getElementById("totalPrice").innerText = total || 0;
+            document.getElementById("discountAmount").innerText = discount.toFixed(2);
+            document.getElementById("finalPrice").innerText = finalPrice.toFixed(2);
+        });
+
+        document.getElementById("fileUpload").addEventListener("change", function(event) {
+            let file = event.target.files[0];
+            let reader = new FileReader();
+            reader.onload = function(e) {
+                document.getElementById("previewImage").src = e.target.result;
+                document.getElementById("previewImage").classList.remove("d-none");
+            };
+            reader.readAsDataURL(file);
+        });
+
+        document.getElementById("checkoutBtn").addEventListener("click", function(event) {
+            event.preventDefault();
+            var paymentModal = new bootstrap.Modal(document.getElementById('paymentModal'));
+            paymentModal.show();
+        });
+
+        function copyUPIID() {
+            let upiInput = document.getElementById("upiID");
+            upiInput.select();
+            document.execCommand("copy");
+            alert("UPI ID copied: " + upiInput.value);
+        }
+    </script>
+
+<script src="bootstrap/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
