@@ -347,18 +347,8 @@
 
 <!--Bootstrap JS-->
 
- <script>
-  // List of services and their corresponding URLs
-  var services = {
-    'printing': 'printing.html',
-    'lamination': 'lamination.html',
-    'application filling': 'form.html',
-    'banner': 'banner.html',
-    'poster': 'poster.html',
-    'photograph': 'photograph.html',
-    'resume': 'resume.html'
-  };
-
+ <!-- Typeahead Script for Search -->
+<script>
   // Initialize Typeahead
   var serviceNames = Object.keys(services); // Array of service names
 
@@ -370,11 +360,13 @@
   {
     name: 'services',
     source: function(query, syncResults) {
-      // Filter service names based on the query
       var matches = serviceNames.filter(function(service) {
         return service.toLowerCase().includes(query.toLowerCase());
       });
       syncResults(matches);
+    },
+    templates: {
+      notFound: '<div class="empty-result">No matching services found</div>' // Custom message when no results
     }
   });
 
@@ -395,26 +387,26 @@
     }
   });
 
-
   // Spinner for Explore Button
   const btn = document.getElementById("exploreBtn");
   const spinner = document.getElementById("spinnerOverlay");
+
   btn.addEventListener("click", function () {
-    spinner.style.display = "flex";
+    // Disable the button while loading
+    btn.disabled = true;
+    spinner.style.display = "flex";  // Show the spinner
     setTimeout(() => {
-      window.location.href = "services.html";
+      window.location.href = "services.html";  // Redirect after delay
     }, 2000);
   });
 
   // Initialize Bootstrap tooltips
-var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
-var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-  return new bootstrap.Tooltip(tooltipTriggerEl);
-});
+  var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+  var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+    return new bootstrap.Tooltip(tooltipTriggerEl);
+  });
+</script>
 
-  
-  </script>
-  
   
   
 </body>
